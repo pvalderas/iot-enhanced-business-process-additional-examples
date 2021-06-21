@@ -1,0 +1,13 @@
+PREFIX : <http://pros.upv.es/pvalderas/IoTDevices>
+PREFIX sosa: <http://www.w3.org/ns/sosa/> 
+ASK { 
+	?s a :PresenceSensor . 
+	?o a sosa:Observation . 
+	?s sosa:madeObservation ?o . 
+	?o sosa:hasResult ?result . 
+	?o sosa:hasFeatureOfInterest ?l . 
+	?l :hasID "London" . 
+	?result sosa:value "True" .
+}
+
+

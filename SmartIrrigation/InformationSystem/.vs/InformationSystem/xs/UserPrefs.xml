@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{D08469D1-7106-4EE2-A8DA-1DDE8A822C43}|Default">
+  <MonoDevelop.Ide.ItemProperties.InformationSystem PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="InformationSystem/Controllers/InformationSystemController.cs">
+    <Files>
+      <File FileName="InformationSystem/Controllers/InformationSystemController.cs" Line="27" Column="43" />
+      <File FileName="InformationSystem/Startup.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="InformationSystem" expanded="True">
+            <Node name="InformationSystem" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="InformationSystemController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

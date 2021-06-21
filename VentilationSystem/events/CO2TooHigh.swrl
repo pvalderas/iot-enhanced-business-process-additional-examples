@@ -1,0 +1,7 @@
+CO2Sensor (?s) ^ 
+Observation(?o) ^ 
+madeObservation (?s, ?o) ^ 
+hasResult(?o, ?result) ^ 
+value(?result, ?v) ^ 
+hasFeatureOfInterest(?o, ?l) ^ 
+swrlb:greaterThan (?v, 1000) -> CO2Level (?l, "TooHigh")

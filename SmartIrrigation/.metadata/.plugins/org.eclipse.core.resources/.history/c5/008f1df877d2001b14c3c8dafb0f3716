@@ -1,0 +1,30 @@
+package es.upv.pros.pvalderas.ventilationsystem;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import es.upv.pros.pvalderas.microservice.iotdevice.BPMNOperation;
+
+public class VentilationSystemHTTPController {
+	
+	@RequestMapping(
+			  value = "/tank/valve", 
+			  method = RequestMethod.POST)
+	@BPMNOperation(name = "Activate", id = "activate")
+	 public String activate() {
+		//TODO: Code to execute the operation
+		return "Open Tank Valve executed";
+		
+	}
+	
+	@RequestMapping(
+			  value = "/tank/valve", 
+			  method = RequestMethod.DELETE)
+	@BPMNOperation(name = "Deactivate", id = "deactivate")
+	 public String dectivate() {
+		//TODO: Code to execute the operation
+		return "Close Tank Valve executed";
+		
+	}
+
+}

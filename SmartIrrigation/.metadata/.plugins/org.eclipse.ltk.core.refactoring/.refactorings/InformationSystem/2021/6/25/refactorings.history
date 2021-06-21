@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;es.upv.pros.pvalderas.tankvalve&apos; to &apos;es.upv.pros.pvalderas.informationsystem&apos;&#x0A;- Original project: &apos;InformationSystem&apos;&#x0A;- Original element: &apos;InformationSystem/src/main/java/es.upv.pros.pvalderas.tankvalve&apos;&#x0A;- Renamed element: &apos;InformationSystem/src/main/java/es.upv.pros.pvalderas.informationsystem&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;es.upv.pros.pvalderas.tankvalve&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;es.upv.pros.pvalderas.tankvalve" name="es.upv.pros.pvalderas.informationsystem" qualified="false" references="true" stamp="1624268423148" textual="false" version="1.0"/>
+</session>

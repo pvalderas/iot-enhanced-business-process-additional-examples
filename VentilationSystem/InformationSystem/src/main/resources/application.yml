@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: InformationSystem
+    
+server:
+  port: 8093
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:2222/eureka
+  instance:
+    metadataMap:
+      connectionType: synchronous

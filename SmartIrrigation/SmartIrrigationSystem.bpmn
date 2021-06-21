@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="SmartIrrigationSystem" name="" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.5.0">
+  <bpmn:collaboration id="Collaboration_0d1mqls">
+    <bpmn:participant id="Participant_119mtor" name="PHYSICAL WORLD" />
+    <bpmn:participant id="Participant_17s2oaa" name="Smart Irrigation System" processRef="Process_1boiacn" />
+    <bpmn:messageFlow id="MessageFlow_1mbdlpk" name="Start Irrigation" sourceRef="Participant_119mtor" targetRef="IntermediateThrowEvent_1at3pww" />
+    <bpmn:messageFlow id="MessageFlow_1kgcrlf" name="Stop Irrigation" sourceRef="Participant_119mtor" targetRef="IntermediateThrowEvent_0lycrzu" />
+    <bpmn:messageFlow id="MessageFlow_08gicqs" name="Refill Tank" sourceRef="Participant_119mtor" targetRef="IntermediateThrowEvent_19epog8" />
+    <bpmn:messageFlow id="MessageFlow_0ic0flc" name="Tank Filled" sourceRef="Participant_119mtor" targetRef="IntermediateThrowEvent_1pl4d5f" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1boiacn">
+    <bpmn:laneSet id="LaneSet_0uzdaco">
+      <bpmn:lane id="Lane_0lttppe" name="Information System">
+        <bpmn:extensionElements>
+          <camunda:field name="iot" stringValue="true" />
+        </bpmn:extensionElements>
+        <bpmn:flowNodeRef>Task_11t1syz</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_132fstb</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_0yqrlib</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_172l0os</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1kp4331" name="Irrigation Controller">
+        <bpmn:extensionElements>
+          <camunda:field name="iot" stringValue="true" />
+        </bpmn:extensionElements>
+        <bpmn:flowNodeRef>Task_0xnw1cz</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_0kifzws</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>IntermediateThrowEvent_1at3pww</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>IntermediateThrowEvent_0lycrzu</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_1w1oev3</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_12xqztf" name="Tank Valve">
+        <bpmn:extensionElements>
+          <camunda:field name="iot" stringValue="true" />
+        </bpmn:extensionElements>
+        <bpmn:flowNodeRef>IntermediateThrowEvent_19epog8</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_0x74td1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_06n3ts4</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>IntermediateThrowEvent_1pl4d5f</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_0ivz6ai</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:sequenceFlow id="SequenceFlow_0qkbxcp" sourceRef="IntermediateThrowEvent_1at3pww" targetRef="Task_0xnw1cz" />
+    <bpmn:serviceTask id="Task_0xnw1cz" name="Start">
+      <bpmn:extensionElements>
+        <camunda:field name="url" stringValue="http://pedvalar.webs.upv.es/microservices/15/operation/22" />
+        <camunda:field name="method" stringValue="GET" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0qkbxcp</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0z98cxo</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_0kifzws">
+      <bpmn:incoming>SequenceFlow_0z98cxo</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0z98cxo" sourceRef="Task_0xnw1cz" targetRef="EndEvent_0kifzws" />
+    <bpmn:sequenceFlow id="SequenceFlow_1invflu" sourceRef="IntermediateThrowEvent_0lycrzu" targetRef="Task_1w1oev3" />
+    <bpmn:sequenceFlow id="SequenceFlow_1hlqfed" sourceRef="Task_1w1oev3" targetRef="Task_11t1syz" />
+    <bpmn:sequenceFlow id="SequenceFlow_17rhfiy" sourceRef="Task_11t1syz" targetRef="EndEvent_132fstb" />
+    <bpmn:startEvent id="IntermediateThrowEvent_1at3pww">
+      <bpmn:outgoing>SequenceFlow_0qkbxcp</bpmn:outgoing>
+      <bpmn:messageEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:startEvent id="IntermediateThrowEvent_19epog8">
+      <bpmn:outgoing>SequenceFlow_0cox0md</bpmn:outgoing>
+      <bpmn:messageEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0cox0md" sourceRef="IntermediateThrowEvent_19epog8" targetRef="Task_0x74td1" />
+    <bpmn:startEvent id="IntermediateThrowEvent_0lycrzu">
+      <bpmn:outgoing>SequenceFlow_1invflu</bpmn:outgoing>
+      <bpmn:messageEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_1w1oev3" name="Stop">
+      <bpmn:extensionElements>
+        <camunda:field name="url" stringValue="http://pedvalar.webs.upv.es/microservices/15/operation/23" />
+        <camunda:field name="method" stringValue="GET" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1invflu</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1hlqfed</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_11t1syz" name="Register Irrigation Record">
+      <bpmn:extensionElements>
+        <camunda:field name="url" stringValue="http://pedvalar.webs.upv.es/microservices/17/operation/27" />
+        <camunda:field name="method" stringValue="GET" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1hlqfed</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_17rhfiy</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_132fstb">
+      <bpmn:incoming>SequenceFlow_17rhfiy</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Task_0x74td1" name="Open">
+      <bpmn:extensionElements>
+        <camunda:field name="url" stringValue="http://pedvalar.webs.upv.es/microservices/16/operation/24" />
+        <camunda:field name="method" stringValue="GET" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0cox0md</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1dwahqi</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_06n3ts4">
+      <bpmn:incoming>SequenceFlow_1dwahqi</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1dwahqi" sourceRef="Task_0x74td1" targetRef="EndEvent_06n3ts4" />
+    <bpmn:startEvent id="IntermediateThrowEvent_1pl4d5f">
+      <bpmn:outgoing>SequenceFlow_16pnvz7</bpmn:outgoing>
+      <bpmn:messageEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_0ivz6ai" name="Close">
+      <bpmn:extensionElements>
+        <camunda:field name="url" stringValue="http://pedvalar.webs.upv.es/microservices/16/operation/25" />
+        <camunda:field name="method" stringValue="GET" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_16pnvz7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_09vzhpk</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_16pnvz7" sourceRef="IntermediateThrowEvent_1pl4d5f" targetRef="Task_0ivz6ai" />
+    <bpmn:sequenceFlow id="SequenceFlow_09vzhpk" sourceRef="Task_0ivz6ai" targetRef="Task_0yqrlib" />
+    <bpmn:sequenceFlow id="SequenceFlow_0z0je82" sourceRef="Task_0yqrlib" targetRef="EndEvent_172l0os" />
+    <bpmn:serviceTask id="Task_0yqrlib" name="Register Refill Record">
+      <bpmn:extensionElements>
+        <camunda:field name="url" stringValue="http://pedvalar.webs.upv.es/microservices/17/operation/26" />
+        <camunda:field name="method" stringValue="GET" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_09vzhpk</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0z0je82</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_172l0os">
+      <bpmn:incoming>SequenceFlow_0z0je82</bpmn:incoming>
+    </bpmn:endEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0d1mqls">
+      <bpmndi:BPMNShape id="Participant_1y45dt6_di" bpmnElement="Participant_119mtor" isHorizontal="true">
+        <dc:Bounds x="160" y="107" width="1387" height="62" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_17s2oaa_di" bpmnElement="Participant_17s2oaa" isHorizontal="true">
+        <dc:Bounds x="160" y="228" width="1387" height="407" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1kp4331_di" bpmnElement="Lane_1kp4331" isHorizontal="true" bioc:stroke="#000099">
+        <dc:Bounds x="190" y="228" width="1357" height="129" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0lttppe_di" bpmnElement="Lane_0lttppe" isHorizontal="true" bioc:stroke="#000099">
+        <dc:Bounds x="190" y="357" width="1357" height="129" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_12xqztf_di" bpmnElement="Lane_12xqztf" isHorizontal="true" bioc:stroke="#000099">
+        <dc:Bounds x="190" y="486" width="1357" height="149" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MessageFlow_1mbdlpk_di" bpmnElement="MessageFlow_1mbdlpk">
+        <di:waypoint x="284" y="169" />
+        <di:waypoint x="284" y="276" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="296" y="191" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0qkbxcp_di" bpmnElement="SequenceFlow_0qkbxcp">
+        <di:waypoint x="302" y="294" />
+        <di:waypoint x="352" y="294" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1j0udsm_di" bpmnElement="Task_0xnw1cz">
+        <dc:Bounds x="352" y="254" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_0kifzws_di" bpmnElement="EndEvent_0kifzws">
+        <dc:Bounds x="502" y="276" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0z98cxo_di" bpmnElement="SequenceFlow_0z98cxo">
+        <di:waypoint x="452" y="294" />
+        <di:waypoint x="502" y="294" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_1kgcrlf_di" bpmnElement="MessageFlow_1kgcrlf">
+        <di:waypoint x="600" y="169" />
+        <di:waypoint x="600" y="276" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="615" y="188" width="69" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1invflu_di" bpmnElement="SequenceFlow_1invflu">
+        <di:waypoint x="618" y="294" />
+        <di:waypoint x="666" y="294" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1w63gmn_di" bpmnElement="Task_1w1oev3">
+        <dc:Bounds x="666" y="254" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1hlqfed_di" bpmnElement="SequenceFlow_1hlqfed">
+        <di:waypoint x="716" y="334" />
+        <di:waypoint x="716" y="374" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1nydahu_di" bpmnElement="Task_11t1syz">
+        <dc:Bounds x="666" y="374" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_132fstb_di" bpmnElement="EndEvent_132fstb">
+        <dc:Bounds x="810" y="396" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_17rhfiy_di" bpmnElement="SequenceFlow_17rhfiy">
+        <di:waypoint x="766" y="414" />
+        <di:waypoint x="810" y="414" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0cox0md_di" bpmnElement="SequenceFlow_0cox0md">
+        <di:waypoint x="947" y="550" />
+        <di:waypoint x="976" y="550" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1ur35kr_di" bpmnElement="Task_0x74td1">
+        <dc:Bounds x="976" y="510" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_06n3ts4_di" bpmnElement="EndEvent_06n3ts4">
+        <dc:Bounds x="1126" y="532" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1dwahqi_di" bpmnElement="SequenceFlow_1dwahqi">
+        <di:waypoint x="1076" y="550" />
+        <di:waypoint x="1126" y="550" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_0lneqye_di" bpmnElement="IntermediateThrowEvent_19epog8">
+        <dc:Bounds x="911" y="532" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1362c63_di" bpmnElement="IntermediateThrowEvent_0lycrzu">
+        <dc:Bounds x="582" y="276" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1kfvb74_di" bpmnElement="IntermediateThrowEvent_1at3pww">
+        <dc:Bounds x="266" y="276" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1d8wsng_di" bpmnElement="IntermediateThrowEvent_1pl4d5f">
+        <dc:Bounds x="1228" y="532" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_16pnvz7_di" bpmnElement="SequenceFlow_16pnvz7">
+        <di:waypoint x="1264" y="550" />
+        <di:waypoint x="1314" y="550" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0gamb72_di" bpmnElement="Task_0ivz6ai">
+        <dc:Bounds x="1314" y="510" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_09vzhpk_di" bpmnElement="SequenceFlow_09vzhpk">
+        <di:waypoint x="1364" y="510" />
+        <di:waypoint x="1364" y="454" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0ldg2fd_di" bpmnElement="Task_0yqrlib">
+        <dc:Bounds x="1314" y="374" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_172l0os_di" bpmnElement="EndEvent_172l0os">
+        <dc:Bounds x="1461" y="396" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0z0je82_di" bpmnElement="SequenceFlow_0z0je82">
+        <di:waypoint x="1414" y="414" />
+        <di:waypoint x="1461" y="414" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_08gicqs_di" bpmnElement="MessageFlow_08gicqs">
+        <di:waypoint x="929" y="169" />
+        <di:waypoint x="929" y="532" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="944" y="186" width="51" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_0ic0flc_di" bpmnElement="MessageFlow_0ic0flc">
+        <di:waypoint x="1246" y="169" />
+        <di:waypoint x="1246" y="532" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1261" y="186" width="53" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
