@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{BC8A8D6A-76B9-4A81-B25C-EE3D53CF6205}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SoilMoistureSensor/Program.cs">
+    <Files>
+      <File FileName="SoilMoistureSensor/Program.cs" Line="56" Column="47" />
+      <File FileName="SoilMoistureSensor/ContextProperty.cs" />
+      <File FileName="SoilMoistureSensor/Property.cs" />
+      <File FileName="../../../example/TemperatureSensor/TemperatureSensor/Program.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SoilMoistureSensor" expanded="True">
+            <Node name="SoilMoistureSensor" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.SoilMoistureSensor PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

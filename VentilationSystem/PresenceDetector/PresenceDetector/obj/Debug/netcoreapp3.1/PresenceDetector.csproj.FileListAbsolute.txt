@@ -1,0 +1,15 @@
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/obj/Debug/netcoreapp3.1/PresenceDetector.csproj.AssemblyReference.cache
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/obj/Debug/netcoreapp3.1/PresenceDetector.AssemblyInfoInputs.cache
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/obj/Debug/netcoreapp3.1/PresenceDetector.AssemblyInfo.cs
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/obj/Debug/netcoreapp3.1/PresenceDetector.csproj.CoreCompileInputs.cache
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/bin/Debug/netcoreapp3.1/PresenceDetector.deps.json
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/bin/Debug/netcoreapp3.1/PresenceDetector.runtimeconfig.json
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/bin/Debug/netcoreapp3.1/PresenceDetector.runtimeconfig.dev.json
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/bin/Debug/netcoreapp3.1/PresenceDetector.dll
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/bin/Debug/netcoreapp3.1/PresenceDetector.pdb
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/bin/Debug/netcoreapp3.1/RabbitMQ.Client.dll
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/bin/Debug/netcoreapp3.1/System.Threading.Channels.dll
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/obj/Debug/netcoreapp3.1/PresenceDetector.csproj.CopyComplete
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/obj/Debug/netcoreapp3.1/PresenceDetector.dll
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/obj/Debug/netcoreapp3.1/PresenceDetector.pdb
+/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/VentilationSystem/PresenceDetector/PresenceDetector/obj/Debug/netcoreapp3.1/PresenceDetector.genruntimeconfig.cache

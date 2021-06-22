@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "BE6mtsEHWQRNTZAenhTYAVstPSiLzr33OhdXWA3SMDGflFHnXisFkyI/IuKuqGVKpNBN88rgnLT3p6wuXf+1Dg==",
+  "success": true,
+  "projectFilePath": "/Users/pedrovalderas/GitHubRepositories/IoTMicroservices/additional-examples/SmartIrrigation/SoilMoistureSensor/SoilMoistureSensor/SoilMoistureSensor.csproj",
+  "expectedPackageFiles": [
+    "/Users/pedrovalderas/.nuget/packages/rabbitmq.client/6.2.1/rabbitmq.client.6.2.1.nupkg.sha512",
+    "/Users/pedrovalderas/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/Users/pedrovalderas/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{C4FE44F4-34D5-4EE8-A397-D2A9DC7919AB}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PresenceDetector/ContextProperty.cs">
+    <Files>
+      <File FileName="PresenceDetector/Program.cs" Line="44" Column="7" />
+      <File FileName="PresenceDetector/Property.cs" Line="7" Column="42" />
+      <File FileName="PresenceDetector/ContextProperty.cs" Line="12" Column="16" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PresenceDetector" expanded="True">
+            <Node name="PresenceDetector" expanded="True">
+              <Node name="ContextProperty.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.PresenceDetector PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

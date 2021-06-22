@@ -1,5 +1,10 @@
-/.metadata/
-/.DS_Store
-/RemoteSystemsTempFiles
+.metadata
+.DS_Store
+RemoteSystemsTempFiles
 .env
 .__pycache__
+.gradle
+.settings
+bin
+build
+gradle
